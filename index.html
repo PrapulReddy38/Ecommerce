@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SurfBoard Shop</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>SurfBoard Shop</h1>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#shop">Shop</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section id="shop">
+        <h2>Our Collection</h2>
+        <div class="products">
+            <div class="product">
+                <img src="surfboard1.png" alt="Surfboard 1">
+                <h3>Classic Surfboard</h3>
+                <p>$250</p>
+                <button onclick="addToCart('Classic Surfboard', 250)">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="surfboard2.png" alt="Surfboard 2">
+                <h3>Advanced Surfboard</h3>
+                <p>$350</p>
+                <button onclick="addToCart('Advanced Surfboard', 350)">Add to Cart</button>
+            </div>
+        </div>
+    </section>
+    <section id="cart">
+        <h2>Shopping Cart</h2>
+        <ul id="cart-items"></ul>
+        <p>Total: $<span id="total">0</span></p>
+    </section>
+    <script src="script.js"></script>
+</body>
+</html>
