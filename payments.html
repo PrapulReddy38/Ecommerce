@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Payment</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <h1>Payment Options</h1>
+    <a href="index.html" class="go-to-home">🏠 Back to Shop</a>
+  </header>
+  <section id="payment">
+    <form onsubmit="submitPayment(event)">
+      <label>
+        Card Number:
+        <input type="text" required>
+      </label><br>
+      <label>
+        Expiry:
+        <input type="text" required>
+      </label><br>
+      <label>
+        CVV:
+        <input type="password" required>
+      </label><br>
+      <button type="submit">Pay Now</button>
+    </form>
+    <p id="confirmation" style="color: green;"></p>
+  </section>
+  <script>
+    function submitPayment(e) {
+      e.preventDefault();
+      localStorage.removeItem('cart');
+      document.getElementById('confirmation').textContent = 'Payment successful! Thank you for your purchase.';
+    }
+  </script>
+</body>
+</html>
