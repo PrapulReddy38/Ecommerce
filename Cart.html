@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Your Cart</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <h1>Your Cart</h1>
+    <a href="index.html" class="go-to-home">🏠 Back to Shop</a>
+  </header>
+  <section id="cart">
+    <ul id="cart-items"></ul>
+    <p>Total: $<span id="total">0</span></p>
+    <a href="payment.html"><button>Proceed to Payment</button></a>
+  </section>
+  <script>
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+    function updateCart() {
+      const cartItems = document.getElementById('cart-items');
+      const totalElement = document.getElementById('total');
+      let total = 0;
+      cartItems.innerHTML = '';
+      cart.forEach(item => {
+        const li = document.createElement('li');
+        li.textContent = `${item.name} - $${item.price}`;
+        cartItems.appendChild(li);
+        total += item.price;
+      });
+      totalElement.textContent = total;
+    }
+
+    updateCart();
+  </script>
+</body>
+</html>
+
